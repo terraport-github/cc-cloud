@@ -20,3 +20,21 @@ Route::get('/', function () {
 Route::get('home', function () {
     return view('home');
 });
+
+//仕様書
+Route::get('/documents', function () {
+    return view('documents.index');
+});
+Route::get('documents/{school_code}/detail', function () {
+    return view('documents.detail');
+});
+
+
+
+//各校
+Route::get('/schools', function () {
+    return view('schools.index');
+});
+Route::get('schools/{school_code}/detail', function () {
+    return view('schools.detail');
+});

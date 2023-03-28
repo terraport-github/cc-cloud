@@ -1,16 +1,15 @@
-
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CC-クラウド | ダッシュボード</title>
+        <title>CC-クラウド | 仕様書一覧</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="css/school.css" rel="stylesheet">
     </head>
     <body>
         <header class="navbar sticky-top flex-md-nowrap p-0 shadow-sm">
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/home"><img src="img/icon.png" alt="CC-クラウド" width="50"></a>
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/home"><img src="/img/icon.png" alt="CC-クラウド" width="50"></a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,8 +49,13 @@
                     </div>
 
                     <div class="card shadow-sm mb-3">
-                        <div class="card-header heading">各校一覧</div>
+                        <div class="card-header heading">資料一覧</div>
                         <div class="card-body">
+                            <div class="row">
+                                <a>2023年度 金城仕様書</a>
+                                <a>ENTRY</a>
+                                <a>LOOK</a>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -59,12 +63,3 @@
         </div>
     </body>
 </html>
-
-<style>
-    .primary-image-color{
-        background-color: #7d7474;
-    }
-    .nav-link{
-        color: #ffffff;
-    }
-</style>
