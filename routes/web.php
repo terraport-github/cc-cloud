@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// システム
+Route::group(['prefix' => 'system', 'as' => 'system'], function () {
+    Route::get('/', function () {
+        return view('system.home');
+    })->name('');
+});
+
+
+// ユーザー
 Route::get('home', function () {
     return view('home');
 });
@@ -38,3 +47,7 @@ Route::get('/schools', function () {
 Route::get('schools/{school_code}/detail', function () {
     return view('schools.detail');
 });
+
+Route::get('schools/{school_code}/update', function () {
+    return view('schools.update');
+})->name('schools.update');

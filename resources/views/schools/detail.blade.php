@@ -6,7 +6,9 @@
                 ダッシュボード
             </h1>
         </div>
-
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <button class="btn btn-primary" onclick="location.href='{{ route('schools.update', ['school_code' => '01']) }}'">テキスト修正</button>
+        </div>
         <div class="card shadow-sm mb-3">
             <div class="card-header heading">資料一覧</div>
             <div class="card-body">
