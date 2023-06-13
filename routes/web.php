@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SchoolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,20 +35,14 @@ Route::get('home', function () {
 Route::get('/documents', function () {
     return view('documents.index');
 });
-Route::get('documents/{school_code}/detail', function () {
+Route::get('documents/{school_id}/detail', function () {
     return view('documents.detail');
 });
 
 
 
 //各校
-Route::get('/schools', function () {
-    return view('schools.index');
-});
-Route::get('schools/{school_code}/detail', function () {
-    return view('schools.detail');
-});
-
-Route::get('schools/{school_code}/update', function () {
-    return view('schools.update');
-})->name('schools.update');
+Route::get('school', [App\Http\Controllers\SchoolController::class, 'index'])->name('school');
+Route::get('school/{school_id}/detail', [App\Http\Controllers\SchoolController::class, 'detail'])->name('school.detail');
+Route::get('school/{school_id}/edit', [App\Http\Controllers\SchoolController::class, 'edit'])->name('school.edit');
+Route::post('school/{school_id}/edit', [App\Http\Controllers\SchoolController::class, 'post'])->name('school.post');

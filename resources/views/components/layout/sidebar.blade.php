@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/schools">
+                        <a class="nav-link" href="{{ route('school') }}">
                             <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-sliders"/></svg>
                             各校
                         </a>

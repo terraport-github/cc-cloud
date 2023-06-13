@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class School extends Authenticatable
 {
 
     use HasFactory;
@@ -22,9 +22,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'school_name',
     ];
 
     /**
@@ -33,8 +31,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
     ];
 
         /**
@@ -45,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         // 'ec_kind'               => EcKind::class,
     ];
+
+    function documents() {
+        return $this->hasMany(\App\Models\Document::class);
+    }
 }

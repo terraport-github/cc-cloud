@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Document extends Authenticatable
 {
 
     use HasFactory;
@@ -22,9 +21,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'content',
+        'secret_content',
+        'school_id',
         'password',
+        'user_id',
     ];
 
     /**
@@ -33,16 +34,19 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
     ];
 
-        /**
+    /**
      * 属性キャスト
      *
      * @var array
      */
     protected $casts = [
-        // 'ec_kind'               => EcKind::class,
+        'document_kind'    => DocumentKind::class,
+        'permission_kind'  => PermissionKind::class,
     ];
+
+    function school() {
+        return $this->belongsTo(\App\Models\School::class);
+    }
 }
