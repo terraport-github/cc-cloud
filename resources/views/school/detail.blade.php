@@ -6,23 +6,24 @@
                 {{ $school->school_name }} 資料一覧
             </h1>
         </div>
-        <div class="d-flex flex-row-reverse bd-highlight">
-            <button class="btn btn-primary" onclick="location.href='{{ route('school.edit', ['school_id' => $school->id]) }}'">テキスト修正</button>
-        </div>
-        <div class="card shadow-sm mb-3">
 
-                @forelse ($school->documents as $document)
-                    <div class="card-header heading">{{ $document->docuent_kind?->label() ?? ''}}</div>
-                    <div class="card-body">
-                        <div>{{  $document->content ?? ''}}</div>
-                        {{-- TODO: ログイン時の権限 --}}
-                        <div>{{  $document->secret_content ?? '' }}</div>
-                        <div>最終利用者 倉本</div>
-                        <div>最終利用者 更新日時20230613 15：56</div>
-                    </div>
-                @empty
-                    <div>データがありません</div>
-                @endforelse
+        <div class="d-flex flex-row-reverse bd-highlight mb-2">
+            <button class="btn btn-primary" onclick="location.href='{{ route('school.edit', ['school_id' => $school->id]) }}'">編集</button>
         </div>
+
+        @forelse ($school->documents as $document)
+            <div class="card shadow-sm mb-3">
+                <div class="card-header heading">{{ $document->document_kind?->label() ?? ''}}</div>
+                <div class="card-body">
+                    <div>{{  $document->content ?? ''}}</div>
+                    {{-- TODO: ログイン時の権限 --}}
+                    <div>{{  $document->secret_content ?? '' }}</div>
+                    <div class="small d-flex justify-content-end">更新者 {{ $document->user?->name ?? '' }}</div>
+                    <div class="small d-flex justify-content-end">更新日時 {{ $document?->updated_at?->format('Y/m/d H:i') }}</div>
+                </div>
+            </div>
+        @empty
+            <div>データがありません</div>
+        @endforelse
     </main>
 </x-layout.main>

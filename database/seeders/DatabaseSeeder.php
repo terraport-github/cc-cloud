@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Enums\DocumentKind;
+use App\Enums\PermissionKind;
 use App\Models\Document;
 use App\Models\School;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::updateOrInsert(['id' => 1], ['name' => '倉本', 'email' => '', 'email' => '', 'password' => '', 'permission_kind' => PermissionKind::Admin,]);
 
         School::updateOrInsert(['id' => 1], ['school_name' => '帝塚山 中学校高等学校']);
         School::updateOrInsert(['id' => 2], ['school_name' => '百合学院中学校・高等学校']);
@@ -35,11 +38,7 @@ class DatabaseSeeder extends Seeder
         Document::updateOrInsert(['id' => 2], ['content' => '百合学院中学校・高等学校  検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 2, 'document_kind' => DocumentKind::SchoolURL, 'permission_kind' => 'd', 'user_id' => 1]);
         Document::updateOrInsert(['id' => 3], ['content' => '大阪女学院中学校  検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 3, 'document_kind' => DocumentKind::SchoolURL, 'permission_kind' => 'd', 'user_id' => 1]);
 
-        Document::updateOrInsert(['id' => 4], ['content' => '大阪女学院中学校 スケジュール', 'secret_content' => '', 'school_id' => 1, 'document_kind' => DocumentKind::Schedule, 'permission_kind' => 'd', 'user_id' => 1]);
-
-
-
-
+        Document::updateOrInsert(['id' => 4], ['content' => '大阪女学院中学校 スケジュール', 'secret_content' => '', 'school_id' => 3, 'document_kind' => DocumentKind::Schedule, 'permission_kind' => 'd', 'user_id' => 1]);
     }
 }
 

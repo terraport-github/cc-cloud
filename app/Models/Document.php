@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Enums\DocumentKind;
+use App\Enums\PermissionKind;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class Document extends Authenticatable
 {
@@ -48,5 +49,9 @@ class Document extends Authenticatable
 
     function school() {
         return $this->belongsTo(\App\Models\School::class);
+    }
+
+    function user() {
+        return $this->belongsTo(\App\Models\User::class);
     }
 }

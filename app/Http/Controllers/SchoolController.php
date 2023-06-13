@@ -26,15 +26,16 @@ class SchoolController extends Controller
 
     function edit($school_id) {
         $school = School::find($school_id);
-        return view('school.detail', [
+        return view('school.edit', [
             'school' => $school,
         ]);
     }
 
-    function post($school_id) {
-        $school = School::find($school_id);
+    function post(Request $request) {
+        dd($request);
+        // $school = School::find($school_id);
         return view('school.detail', [
-            'school' => $school,
+            // 'school' => $school,
         ]);
     }
 }

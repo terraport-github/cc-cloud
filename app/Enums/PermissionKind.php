@@ -21,4 +21,14 @@ enum PermissionKind: string
             self::guest => '外部',
         };
     }
+
+    public function level(): int
+    {
+        return match ($this) {
+            self::Admin => 1,
+            self::D => 2,
+            self::TP => 3,
+            self::guest => 4,
+        };
+    }
 }
