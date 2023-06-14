@@ -10,7 +10,7 @@ enum PermissionKind: string
     case Admin = 'admin';
     case D = 'd';
     case TP = 'tp';
-    case guest = 'guest';
+    case Guest = 'guest';
 
     public function label(): string
     {
@@ -18,7 +18,7 @@ enum PermissionKind: string
             self::Admin => '管理者',
             self::D => 'ディレクター',
             self::TP => '社内',
-            self::guest => '外部',
+            self::Guest => '外部',
         };
     }
 
@@ -28,7 +28,7 @@ enum PermissionKind: string
             self::Admin => 1,
             self::D => 2,
             self::TP => 3,
-            self::guest => 4,
+            self::Guest => 4,
         };
     }
 }

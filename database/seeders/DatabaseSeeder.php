@@ -34,11 +34,11 @@ class DatabaseSeeder extends Seeder
         School::updateOrInsert(['id' => 14], ['school_name' => '奈良学園中学校高等学校']);
         School::updateOrInsert(['id' => 15], ['school_name' => '南山大学附属小学校']);
 
-        Document::updateOrInsert(['id' => 1], ['content' => '帝塚山 中学校 検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 1, 'document_kind' => DocumentKind::SchoolURL, 'permission_kind' => 'd', 'user_id' => 1]);
-        Document::updateOrInsert(['id' => 2], ['content' => '百合学院中学校・高等学校  検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 2, 'document_kind' => DocumentKind::SchoolURL, 'permission_kind' => 'd', 'user_id' => 1]);
-        Document::updateOrInsert(['id' => 3], ['content' => '大阪女学院中学校  検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 3, 'document_kind' => DocumentKind::SchoolURL, 'permission_kind' => 'd', 'user_id' => 1]);
+        Document::updateOrInsert(['id' => 1], ['content' => '帝塚山 中学校 検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 1, 'document_kind' => DocumentKind::SchoolURL, 'permission_level' => 2, 'user_id' => 1]);
+        Document::updateOrInsert(['id' => 2], ['content' => '百合学院中学校・高等学校  検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 2, 'document_kind' => DocumentKind::SchoolURL, 'permission_level' => 2, 'user_id' => 1]);
+        Document::updateOrInsert(['id' => 3], ['content' => '大阪女学院中学校  検収・本番URL', 'secret_content' => 'levisマイグレーションのURLなど', 'school_id' => 3, 'document_kind' => DocumentKind::SchoolURL, 'permission_level' => 2, 'user_id' => 1]);
 
-        Document::updateOrInsert(['id' => 4], ['content' => '大阪女学院中学校 スケジュール', 'secret_content' => '', 'school_id' => 3, 'document_kind' => DocumentKind::Schedule, 'permission_kind' => 'd', 'user_id' => 1]);
+        Document::updateOrInsert(['id' => 4], ['content' => '大阪女学院中学校 スケジュール', 'secret_content' => '', 'school_id' => 3, 'document_kind' => DocumentKind::Schedule, 'permission_level' => 2, 'user_id' => 1]);
     }
 }
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('secret_content')->nullable()->comment('重要内容');
             $table->unsignedBigInteger('school_id')->nullable()->comment('学校ID');
             $table->string('document_kind')->comment('資料種別');
-            $table->string('permission_kind')->comment('権限種別');
+            $table->integer('permission_level')->comment('権限レベル');
             $table->unsignedBigInteger('user_id')->comment('最終利用者');
             $table->unique(['document_kind', 'school_id']);
             

@@ -17,8 +17,8 @@ enum DocumentKind: string
         return match ($this) {
             self::SchoolURL => '検収・本番URL',
             self::Schedule => 'スケジュール',
-            self::TP => '社内',
-            self::guest => '外部',
+            self::TP => '○○資料１',
+            self::guest => '○○資料２',
         };
     }
 }

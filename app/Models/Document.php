@@ -25,7 +25,8 @@ class Document extends Authenticatable
         'content',
         'secret_content',
         'school_id',
-        'password',
+        'document_kind',
+        'permission_level',
         'user_id',
     ];
 
@@ -44,7 +45,6 @@ class Document extends Authenticatable
      */
     protected $casts = [
         'document_kind'    => DocumentKind::class,
-        'permission_kind'  => PermissionKind::class,
     ];
 
     function school() {
