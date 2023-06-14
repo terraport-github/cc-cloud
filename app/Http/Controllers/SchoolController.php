@@ -52,6 +52,10 @@ class SchoolController extends Controller
                             'user_id' => 1
                         ],
                     );
+                    // １つの資料を変更する場合
+                    if (!$request->isMulti) {
+                        return redirect(route('document.detail', ['document_kind' => $document_kind]))->with('success', '更新が完了しました');
+                    }
                 }
             }
         });

@@ -1,3 +1,7 @@
+<?php
+    $school = $document->school;
+    $document_kind = $document->document_kind;
+?>
 <x-layout.main>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-2">
             <h1 class="h3">
@@ -7,11 +11,7 @@
         </div>
         <form action="{{ route('school.post', ['school_id' => $school->id]) }}" method="POST">
             @csrf
-
-            {{-- App\Enums\DocumentKind::cases() --}}
-            @foreach (App\Enums\DocumentKind::cases() as $document_kind)
-                <x-edit.document_form :school=$school :documentKind=$document_kind :isMulti=true />
-            @endforeach
+            <x-edit.document_form :school=$school :documentKind=$document_kind :isMulti=false/>
 
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

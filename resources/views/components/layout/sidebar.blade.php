@@ -33,9 +33,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/documents">
+                        <a class="nav-link" href="{{ route('document') }}">
                             <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-sliders"/></svg>
-                            仕様書
+                            仕様書一覧
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('document.detail',['document_kind' => App\Enums\DocumentKind::SchoolURL]) }}">
+                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-sliders"/></svg>
+                            全校検収/本番URL
                         </a>
                     </li>
                     <li class="nav-item">
