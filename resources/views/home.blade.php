@@ -6,41 +6,38 @@
             ダッシュボード
         </h1>
     </div>
-    <ul class="nav nav-tabs">
-        <li class="nav-item active">
-            <a class="nav-link">検収環境</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">本番環境</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">○○</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">○○</a>
-        </li>
-    </ul>
+
     <div class="card shadow-sm mb-3">
-        <div class="card-header heading">検収環境</div>
+        <div class="card-header heading">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#item1">検収環境</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#item2">本番環境</a>
+                </li>
+            </ul>
+        </div>
+
         <div class="card-body">
-            検収環境の情報(静的)<br>
-            URL一覧など<br>
-            金城<br>
-            <a target="_blank" href="http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/">http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/</a>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="item1">
+                    <div>
+                        検収環境の情報(静的)<br>
+                        URL一覧など<br>
+                        金城<br>
+                        <a target="_blank" href="http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/">http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/</a>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="item2">
+                    <div>
+                        本番環境の情報(静的)<br>
+                        URL一覧など<br>
+                        金城<br>
+                        <a target="_blank" href="http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/">http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </x-layout.main>
-<style>
-    .primary-image-color{
-        background-color: #405DA9;
-    }
-    .nav-link{
-        color: #ffffff;
-    }
-    .nav-tabs {
-        background-color: #8b9ecd;
-    }
-    .nav-item.active {
-        background-color: #5E7DCD;
-    }
-</style>

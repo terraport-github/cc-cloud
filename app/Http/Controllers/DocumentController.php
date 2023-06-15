@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\DocumentKind;
 use App\Models\Document;
+use App\Models\School;
 use Illuminate\Http\Request;
 
 class DocumentController extends Controller
@@ -13,17 +15,18 @@ class DocumentController extends Controller
 
     function detail(Request $request) {
         $documents = Document::where('document_kind', $request->document_kind)->get();
-        // dd( $documents,$request->document_kind);
         return view('document.detail', [
             'document_kind' => $request->document_kind,
-            'documents' => $documents,
+            'documents'     => $documents,
         ]);
     }
 
     function edit(Request $request) {
-        $document = Document::where('document_kind', $request->document_kind)->where('school_id', $request->school_id)->first();
+        $school = School::find($request->school_id);
+        $document_kind = DocumentKind::tryFrom($request->document_kind);
         return view('document.edit', [
-            'document' => $document,
+            'document_kind' => $document_kind,
+            'school'        => $school,
         ]);
     }
 }

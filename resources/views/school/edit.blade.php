@@ -13,9 +13,6 @@
                 <x-edit.document_form :school=$school :documentKind=$document_kind :isMulti=true />
             @endforeach
 
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
             <button type="submit" class="btn btn-primary">更新</button>
         </form>
 </x-layout.main>

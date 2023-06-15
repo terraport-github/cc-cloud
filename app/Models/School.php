@@ -33,7 +33,7 @@ class School extends Authenticatable
     protected $hidden = [
     ];
 
-        /**
+    /**
      * 属性キャスト
      *
      * @var array

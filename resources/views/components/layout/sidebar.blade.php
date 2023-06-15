@@ -41,7 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('document.detail',['document_kind' => App\Enums\DocumentKind::SchoolURL]) }}">
                             <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-sliders"/></svg>
-                            全校検収/本番URL
+                            検収/本番URL
                         </a>
                     </li>
                     <li class="nav-item">
@@ -53,7 +53,7 @@
                 </ul>
 
                 <h6 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-2">
-                    <span>各種設定</span>
+                    <span style="color: #ffffff;">各種設定</span>
                 </h6>
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
@@ -144,3 +144,8 @@
         </symbol>
     </svg>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .nav-link:hover {
+            color: #000;
+        }
+    </style>

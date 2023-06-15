@@ -31,14 +31,13 @@ Route::get('home', function () {
     return view('home');
 });
 
-//仕様書
+//仕様書 モック
 Route::get('/documents', function () {
     return view('documents.index');
 });
 Route::get('documents/{school_id}/detail', function () {
     return view('documents.detail');
 });
-
 
 
 //各校
