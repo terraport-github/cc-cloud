@@ -209,8 +209,15 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        /**
+         * Enums
+         */
         'DocumentKind' =>  App\Enums\DocumentKind::class,
+
+        /**
+         * 独自Helper関数
+         */
+        'Helper' => App\Helpers\Helper::class,
 
     ])->toArray(),
 
