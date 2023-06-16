@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Enums\DocumentKind;
 use App\Models\Document;
+use App\Models\DocumentGroup;
+use App\Models\DocumentGroupDetail;
 use App\Models\School;
 use Illuminate\Http\Request;
 

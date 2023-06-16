@@ -1,12 +1,12 @@
 <x-layout.main>
     <x-slot:titleMain>
-        資料一覧
+        {{ $documentGroup->title }}  資料一覧
     </x-slot:titleMain>
 
     <x-slot:breadcrumb>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">ホーム</a></li>
-            <li class="breadcrumb-item active">資料一覧</li>
+            <li class="breadcrumb-item active">{{ $documentGroup->title }}  資料一覧</li>
         </ol>
     </x-slot:breadcrumb>
 
@@ -14,8 +14,8 @@
         <div class="card-header heading">資料一覧</div>
         <div class="card-body">
             <div class="row">
-                    @foreach (App\Enums\DocumentKind::cases() as $document_kind)
-                        <a href="{{ route('document.detail', ['document_kind' => $document_kind]) }}">{{  $document_kind->label() ?? ''}}</a>
+                    @foreach ($documentGroup->documentGroupDetails as $documentGroupDetail)
+                        <a href="{{ route('document_group.detail', ['document_group_detail_id' => $documentGroupDetail->id]) }}">{{  $documentGroupDetail->document_kind->label() ?? ''}}</a>
                     @endforeach
             </div>
         </div>

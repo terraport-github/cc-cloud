@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\DocumentKind;
 use App\Models\School;
+use App\Services\DocumentService;
 use Illuminate\Http\Request;
 
 class KarteController extends Controller

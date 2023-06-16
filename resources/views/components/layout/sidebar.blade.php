@@ -2,36 +2,16 @@
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse primary-image-color">
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
-                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-clipboard-data"/></svg>
-                            メンテナンス
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">
-                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-journal-arrow-up"/></svg>
-                            サーバーログ
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">
-                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-file-earmark-person"/></svg>
-                            入出金管理
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">
-                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-telephone-inbound"/></svg>
-                            出願確認
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-pencil-square"/></svg>
-                            営業関連
-                        </a>
-                    </li>
+
+                    @foreach (App\Models\DocumentGroup::All() as $documentGroup)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('document_group', ['document_group_id' => $documentGroup->id]) }}">
+                                <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-pencil-square"/></svg>
+                                {{ $documentGroup->title ?? '' }}
+                            </a>
+                        </li>
+                    @endforeach
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('document') }}">
                             <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-sliders"/></svg>
