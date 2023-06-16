@@ -50,6 +50,12 @@
                             各校
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('karte') }}">
+                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-clipboard-data"/></svg>
+                            カルテ
+                        </a>
+                    </li>
                 </ul>
 
                 <h6 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-2">

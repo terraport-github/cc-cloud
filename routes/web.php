@@ -31,15 +31,6 @@ Route::get('home', function () {
     return view('home');
 })->name('home');
 
-//仕様書 モック
-Route::get('/documents', function () {
-    return view('documents.index');
-});
-Route::get('documents/{school_id}/detail', function () {
-    return view('documents.detail');
-});
-
-
 //各校
 Route::get('school', [App\Http\Controllers\SchoolController::class, 'index'])->name('school');
 Route::get('school/{school_id}/detail', [App\Http\Controllers\SchoolController::class, 'detail'])->name('school.detail');
@@ -51,3 +42,8 @@ Route::post('school/{school_id}/edit', [App\Http\Controllers\SchoolController::c
 Route::get('document', [App\Http\Controllers\DocumentController::class, 'index'])->name('document');
 Route::get('document/{document_kind}/detail', [App\Http\Controllers\DocumentController::class, 'detail'])->name('document.detail');
 Route::get('document/{document_kind}/{school_id}/edit', [App\Http\Controllers\DocumentController::class, 'edit'])->name('document.edit');
+
+// カルテ
+Route::get('karte', [App\Http\Controllers\KarteController::class, 'index'])->name('karte');
+Route::get('karte/{school_id}/detail', [App\Http\Controllers\KarteController::class, 'detail'])->name('karte.detail');
+Route::get('karte/{school_id}/edit', [App\Http\Controllers\KarteController::class, 'edit'])->name('karte.edit');
