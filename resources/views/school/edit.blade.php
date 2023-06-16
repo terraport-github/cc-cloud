@@ -1,14 +1,20 @@
 <x-layout.main>
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-2">
-            <h1 class="h3">
-                <svg class="bi flex-shrink-0" width="24" height="24" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-clipboard-data"/></svg>
-                {{ $school->school_name }} 仕様書編集
-            </h1>
-        </div>
+        <x-slot:titleMain>
+            {{ $school->school_name }} 仕様書編集
+        </x-slot:titleMain>
+    
+        <x-slot:breadcrumb>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">ホーム</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('school') }}">各校</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('school.detail', ['school_id' => $school->id]) }}">資料一覧</a></li>
+                <li class="breadcrumb-item active">仕様書編集</li>
+            </ol>
+        </x-slot:breadcrumb>
+
         <form action="{{ route('school.post', ['school_id' => $school->id]) }}" method="POST">
             @csrf
 
-            {{-- App\Enums\DocumentKind::cases() --}}
             @foreach (App\Enums\DocumentKind::cases() as $document_kind)
                 <x-edit.document_form :school=$school :documentKind=$document_kind :isMulti=true />
             @endforeach
@@ -16,20 +22,3 @@
             <button type="submit" class="btn btn-primary">更新</button>
         </form>
 </x-layout.main>
-
-{{-- <textarea class="form-control" type="textarea" rows="15">
-    ▼ 合否発表システム
-    http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/
-    ▼ Web出願システム
-    http://candy-ac.kont5.com/entry/html/index.php/kinjo-gakuin/junior/
-    
-    アプリ経由用
-    http://candy-ac.kont5.com/entry/html/index.php/kinjo-gakuin/junior/?_app=1
-    
-    管理者用
-    http://candy-ac.kont5.com/look/html/index.php/kinjo-gakuin/admin/
-    http://candy-ac.kont5.com/entry/html/index.php/kinjo-gakuin/admin/
-    
-    初期データ登録用
-    http://candy-ac.kont5.com/terraport/html/index.php/tasks/register_kinjyo
-</textarea> --}}

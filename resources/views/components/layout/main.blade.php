@@ -44,13 +44,24 @@
             
             <div class="row">
                 <x-layout.sidebar/>
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
                     <!-- フラッシュメッセージ -->
                     @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
+                    <h1>{{ $titleMain ?? '' }}</h1>
+                    <div class="d-md-flex justify-content-end flex-wrap flex-md-nowrap align-items-center pt-2 pb-md-2">
+                        @if(isset($breadcrumb))
+                            <div class="btn-toolbar align-middl">
+                                <nav style="--bs-breadcrumb-divider: '>';">
+                                    {{ $breadcrumb }}
+                                </nav>
+                            </div>
+                        @endif
+                    </div>
+
                     {{ $slot }}
                 </main>
             </div>

@@ -29,7 +29,7 @@ Route::group(['prefix' => 'system', 'as' => 'system'], function () {
 // ユーザー
 Route::get('home', function () {
     return view('home');
-});
+})->name('home');
 
 //仕様書 モック
 Route::get('/documents', function () {
