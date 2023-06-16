@@ -10,9 +10,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link href="css/school.css" rel="stylesheet">
     </head>
+
     <body>
         <header class="navbar sticky-top flex-md-nowrap p-0 shadow-sm">
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/home"><img src="{{ asset('img/icon.png') }}" alt="CC-クラウド" width="50"></a>
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 disp-img" href="/home"></a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -81,5 +82,14 @@
     }
     .nav-item.active {
         background-color: #5E7DCD;
+    }
+    .disp-img {
+        width: 80px;
+        height: 40px;
+        background-size: cover;
+        background-image:url('http://cc-cloud.local/img/icon.png');
+    }
+    .disp-img:hover {
+        background-image:url('http://cc-cloud.local/img/icon2.png');
     }
 </style>
