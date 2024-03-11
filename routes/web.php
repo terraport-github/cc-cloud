@@ -48,7 +48,6 @@ Route::get('document_group/{document_group_id}', [App\Http\Controllers\DocumentG
 Route::get('document_group/{document_group_detail_id}/detail', [App\Http\Controllers\DocumentGroupController::class, 'detail'])->name('document_group.detail');
 Route::get('document_group/{document_group_detail_id}/{school_id}/edit', [App\Http\Controllers\DocumentGroupController::class, 'edit'])->name('document_group.edit');
 
-
 // カルテ
 Route::get('karte', [App\Http\Controllers\KarteController::class, 'index'])->name('karte');
 Route::get('karte/{school_id}/detail', [App\Http\Controllers\KarteController::class, 'detail'])->name('karte.detail');
