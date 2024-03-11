@@ -16,7 +16,15 @@
         </div>
 
         @forelse ($school->documents as $document)
-            <x-document.detail :document=$document/>
+            <div class="card shadow-sm mb-3">
+                <?php $school_name = $school->school_name ?>
+                <div class="card-header heading d-flex justify-content-between">
+                    <span style="margin:auto 0">{{ (isset($school_name) ? $school_name : $document_kind?->label()) ?? ''}}</span>
+                </div>
+
+                <x-document.detail :document=$document/>
+            </div>
+            
         @empty
             <div>データがありません</div>
         @endforelse

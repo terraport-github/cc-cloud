@@ -6,7 +6,7 @@
     <x-slot:breadcrumb>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">ホーム</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('school') }}">カルテ 各校</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('karte') }}">カルテ 各校</a></li>
             <li class="breadcrumb-item active">カルテ</li>
         </ol>
     </x-slot:breadcrumb>

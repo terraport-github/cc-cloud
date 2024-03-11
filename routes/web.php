@@ -53,3 +53,8 @@ Route::get('document_group/{document_group_detail_id}/{school_id}/edit', [App\Ht
 Route::get('karte', [App\Http\Controllers\KarteController::class, 'index'])->name('karte');
 Route::get('karte/{school_id}/detail', [App\Http\Controllers\KarteController::class, 'detail'])->name('karte.detail');
 Route::get('karte/{school_id}/edit', [App\Http\Controllers\KarteController::class, 'edit'])->name('karte.edit');
+
+// 業務改善
+Route::get('efficiency', [App\Http\Controllers\EfficiencyController::class, 'index'])->name('efficiency');
+// Route::get('efficiency/{school_id}/detail', [App\Http\Controllers\KarteController::class, 'detail'])->name('karte.detail');
+// Route::get('efficiency/{school_id}/edit', [App\Http\Controllers\KarteController::class, 'edit'])->name('karte.edit');

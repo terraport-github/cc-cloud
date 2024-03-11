@@ -6,8 +6,8 @@
         <x-slot:breadcrumb>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">ホーム</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('school') }}">各校</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('school.detail', ['school_id' => $school->id]) }}">資料一覧</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('karte') }}">カルテ 各校</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('karte.detail', ['school_id' => $school->id]) }}">資料一覧</a></li>
                 <li class="breadcrumb-item active">仕様書編集</li>
             </ol>
         </x-slot:breadcrumb>

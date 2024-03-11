@@ -37,6 +37,23 @@
                         </a>
                     </li>
                 </ul>
+                <h6 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-2">
+                    <span style="color: #ffffff;">業務ツール</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('efficiency') }}">
+                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-lock-fill"/></svg>
+                            画像生成
+                        </a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <svg class="bi flex-shrink-0" width="16" height="16" style="margin: 0 2px 4px 0;"><use xlink:href="#symbol-lock-fill"/></svg>
+                            パスワード
+                        </a>
+                    </li> --}}
+                </ul>
 
                 <h6 class="d-flex justify-content-between align-items-center px-3 mt-4 mb-2">
                     <span style="color: #ffffff;">各種設定</span>

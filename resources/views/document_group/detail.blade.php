@@ -19,19 +19,16 @@
         <?php 
             $document = $school->documents->where('document_kind', $document_kind)->first();
         ?>
-        <div class="d-flex flex-row-reverse bd-highlight mb-2">
-            <button class="btn btn-primary" onclick="location.href='{{ route('document_group.edit', ['school_id' => $school->id, 'document_group_detail_id' => $documentGroupDetail->id]) }}'">編集</button>
-        </div>
 
-        {{-- 資料が既にある学校 --}}
-        @if($document)
+        <div class="card shadow-sm mb-3">
             <?php $school_name = $school->school_name ?>
-            <x-document.detail :title=$school_name :document=$document/>
-        @else
-            <div class="card shadow-sm mb-3">
-                <div class="card-header heading">{{ $school->school_name ?? ''}}</div>
+            <div class="card-header heading d-flex justify-content-between">
+                <span style="margin:auto 0">{{ (isset($school_name) ? $school_name : $document_kind?->label()) ?? ''}}</span>
+                <button class="btn btn-primary" onclick="location.href='{{ route('document_group.edit', ['school_id' => $school->id, 'document_group_detail_id' => $documentGroupDetail->id]) }}'">編集</button>
             </div>
-        @endif
 
+            <x-document.detail :title=$school_name :document=$document/>
+        </div>
+        
     @endforeach
 </x-layout.main>
