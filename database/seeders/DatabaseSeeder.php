@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::updateOrInsert(['id' => 1], ['name' => '倉本', 'email' => '', 'email' => '', 'password' => '', 'permission_kind' => PermissionKind::Admin,]);
-
         School::updateOrInsert(['id' => 1], ['school_name' => '帝塚山 中学校高等学校']);
         School::updateOrInsert(['id' => 2], ['school_name' => '百合学院中学校・高等学校']);
         School::updateOrInsert(['id' => 3], ['school_name' => '大阪女学院中学校']);
